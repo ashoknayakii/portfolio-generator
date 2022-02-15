@@ -1,20 +1,33 @@
 const profileDataArgs = process.argv.slice(2, process.argv.length);
-console.log(profileDataArgs);
+const name = profileDataArgs[0];
+const github = profileDataArgs [1];
+console.log(generatePage(name, github));
 
 
 
-
-
-
-
-
-
-
-
-
-const printProfileData = profileDataArr => {
-    profileDataArr.forEach(profileItem => console.log(profileItem));
+const generatePage = (userName, githubName) => {
+    return`
+    Name: ${userName} 
+    Github: ${githubName}
+    `;
 };
 
-  printProfileData(profileDataArgs);
+console.log(generatePage('Ash', 'Ashhub'));
+
+
+
+
+
+
+
+
+
+
+
+
+// const printProfileData = profileDataArr => {
+//     profileDataArr.forEach(profileItem => console.log(profileItem));
+// };
+
+//   printProfileData(profileDataArgs);
   
