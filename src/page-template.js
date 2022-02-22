@@ -4,12 +4,12 @@ const generateAbout = aboutText => {
     return '';
   }
 
-return `<section class="my-3" id="about">
+  return `<section class="my-3" id="about">
 <h2 class="text-dark bg-primary p-2 display-inline-block">About Me</h2>
 <p>${aboutText}</p>
 </section>
 `;
-}; 
+};
 
 // create the projects section
 const generateProjects = projectsArr => {
@@ -18,9 +18,9 @@ const generateProjects = projectsArr => {
       <h2 class="text-dark bg-primary p-2 display-inline-block">Work</h2>
       <div class="flex-row justify-space-between">
       ${projectsArr
-        .filter(({ feature }) => feature)
-        .map(({ name, description, languages, link }) => {
-          return `
+      .filter(({ feature }) => feature)
+      .map(({ name, description, languages, link }) => {
+        return `
           <div class="col-12 mb-2 bg-dark text-light p-3">
             <h3 class="portfolio-item-title text-light">${name}</h3>
             <h5 class="portfolio-languages">
@@ -31,13 +31,13 @@ const generateProjects = projectsArr => {
             <a href="${link}" class="btn"><i class="fab fa-github mr-2"></i>View Project on GitHub</a>
           </div>
         `;
-        })
-        .join('')}
+      })
+      .join('')}
 
       ${projectsArr
-        .filter(({ feature }) => !feature)
-        .map(({ name, description, languages, link }) => {
-          return `
+      .filter(({ feature }) => !feature)
+      .map(({ name, description, languages, link }) => {
+        return `
           <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3 flex-column">
             <h3 class="portfolio-item-title text-light">${name}</h3>
             <h5 class="portfolio-languages">
@@ -48,8 +48,8 @@ const generateProjects = projectsArr => {
             <a href="${link}" class="btn mt-auto"><i class="fab fa-github mr-2"></i>View Project on GitHub</a>
           </div>
         `;
-        })
-        .join('')}
+      })
+      .join('')}
       </div>
     </section>
   `;
@@ -62,7 +62,7 @@ module.exports = templateData => {
   // destructure projects and about data from templateData based on their property key names
   const { projects, about, ...header } = templateData;
 
-    return `
+  return `
   < !DOCTYPE html >
     <html lang="en">
 
@@ -81,9 +81,8 @@ module.exports = templateData => {
                       <div class="container flex-row justify-space-between align-center py-3">
                         <h1 class="page-title text-secondary bg-dark py-2 px-3">${header.name}</h1>
                         <nav class="flex-row">
-                          <a class="ml-2 my-1 px-2 py-1 bg-secondary text-dark" href="https://github.com/${
-              header.github
-            }">GitHub</a>
+                          <a class="ml-2 my-1 px-2 py-1 bg-secondary text-dark" href="https://github.com/${header.github
+    }">GitHub</a>
                         </nav>
                       </div>
                     </header>
@@ -98,4 +97,4 @@ module.exports = templateData => {
                   </body>
                 </html>
                 `;
-  };
+};
